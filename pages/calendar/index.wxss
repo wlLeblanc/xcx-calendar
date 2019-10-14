@@ -1,0 +1,146 @@
+/* pages/dateSelect/dateSelect.wxss */
+
+.date-day {
+  display: flex;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date-day.bgitem {
+  background-color: rgb(243, 233, 202);
+}
+
+.date-day.active {
+  background: #eabe2c;
+  color: #fff;
+}
+
+.date-day.unavailable {
+  color: #aaa;
+}
+
+.date-week {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 5px;
+}
+
+.week {
+  color: #eabe2c;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-days {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 35rpx;
+}
+
+.bgwhite {
+  background-color: #fff;
+}
+.calendar{
+  padding-bottom: 360rpx;
+}
+.null-gray{
+  height: 10rpx;
+  opacity: 1;
+  background: rgba(139, 138, 138, 0.2);
+}
+.time-box {
+  height: 380rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.outside-box{
+  height: 100%;
+  background: #fff;
+  position: relative;
+}
+.null-box{
+  display: block;
+  flex:.05;
+  height:50rpx;
+  background:#eabe2c; 
+}
+.choose-time{
+  flex: 5;
+  padding-left: 10rpx;
+}
+.time-title {
+  height: 80rpx;
+  display: flex;
+  padding-left: 10rpx;
+  line-height: 50rpx;
+  background: #fff;
+}
+
+.get-time {
+  flex: 0.5;
+  padding-left: 50rpx;
+  text-align: center;
+  writing-mode: vertical-lr;
+  position: relative;
+}
+
+.kailong {
+  position: absolute;
+  top: 32%;
+  right: 5rpx;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid transparent;
+  border-bottom: 10rpx solid transparent;
+  border-left: 10rpx solid #eabe2c;
+}
+
+.icon-left {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 32%;
+  left: 5rpx;
+  border-top: 10rpx solid transparent;
+  border-bottom: 10rpx solid transparent;
+  border-right: 10rpx solid #eabe2c;
+}
+
+.time-picker {
+  width: 100%;
+  display: flex;
+  padding-bottom: 50rpx;
+  background: #fff;
+}
+
+.picker-box {
+  flex: 1;
+  padding: 0 10rpx;
+}
+
+.date-picker-content-item {
+  height: 100rpx;
+  text-align: center;
+}
+
+.time-box button {
+  width: 100%;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 0;
+  background-image: linear-gradient(90deg, #eabe2c 0%, #eb9a2f 100%);
+}

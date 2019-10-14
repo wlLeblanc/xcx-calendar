@@ -1,0 +1,60 @@
+<view class="calendar">
+  <view style="position:fixed;top:0;background:#F5F5F5;font-size: 30rpx; padding-top: 10rpx;padding-bottom: 10rpx;">
+    <view class="layout-flex row" style="background-color: #F5F5F5;">
+      <text class="date-week" style="width:{{systemInfo.windowWidth/7-10}}px;height:20px" wx:for="{{weekStr}}" wx:key="{{index}}">
+            <text wx:if="{{item ==='日' || item ==='六'}}" class="week">{{item}}</text>
+      <text wx:else>{{item}}</text>
+      </text>
+    </view>
+  </view>
+  <view style="margin-top:50px"></view>
+  <view wx:for="{{dateList}}" wx:key="{{index}}" wx:for-item="dateItem" style="padding:30rpx 0" class="date-box">
+    <view class="date-year-month" style="text-align: center;font-size:35rpx;">{{dateItem.year}}年{{dateItem.month}}月</view>
+    <view class="layout-flex row" style="flex-wrap: wrap;margin-top:30rpx;">
+      <view class="date-day {{item.day<=0?'bgwhite':item.class}}" style="width:{{systemInfo.windowWidth/7-10}}px;height:{{systemInfo.windowWidth/7}}px;" data-year="{{dateItem.year}}" data-month="{{dateItem.month}}" data-day="{{item.day}}" bindtap="onPressDate"
+        wx:for="{{dateItem.days}}" wx:key="{{index}}">
+        <view class='item-days'>
+          <text style='font-size:28rpx;'>{{item.day>0?(item.daytext?item.daytext:item.day):''}}</text>
+          <text style='font-size:30rpx;' wx:if="{{item.inday}}">租车</text>
+          <text style='font-size:30rpx;' wx:if="{{item.outday}}">还车</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+  <view class="time-box">
+    <view class="null-gray"></view>
+    <view class="outside-box">
+       <view class="time-title">
+      <text class="null-box"></text>
+      <text class="choose-time">时刻选择</text>
+    </view>
+    <view class="time-picker">
+
+      <view class="get-time">
+        取车时间
+        <view class="kailong"></view>
+      </view>
+      <view class="picker-box">
+        <picker-view class="date-picker-content-item" indicator-style="height: 70rpx;" value="{{tempYearPos}}" bindchange="year_onChange">
+          <picker-view-column>
+            <view wx:for="{{startTime}}" wx:key="*this" style="height: 70rpx; text-align:center; font-size: 36rpx; line-height:70rpx; color:#353535;">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+      <view class="picker-box">
+        <picker-view class="date-picker-content-item" indicator-style="height: 70rpx;" value="{{tempYearPos}}" bindchange="year_onChange">
+          <picker-view-column>
+            <view wx:for="{{startTime}}" wx:key="*this" style="height: 70rpx; text-align:center; font-size: 36rpx; line-height:70rpx; color:#353535;">{{item}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+       <view class="get-time">
+       <view class="icon-left"></view>
+        还车时间
+      </view>
+    </view>
+    <button class="btn" disabled="{{!(checkInDate && checkOutDate)}}" bindtap="go">确认</button>
+    </view>
+  </view>
